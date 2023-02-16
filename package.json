@@ -1,7 +1,6 @@
 {
   "name": "express_calc",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndrewpacheco/express-calc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndrewpacheco/express-calc/issues"
+  },
+  "homepage": "https://github.com/ndrewpacheco/express-calc#readme",
+  "description": ""
 }
