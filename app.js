@@ -26,7 +26,7 @@ app.get("/median", function (req, res) {
   return res.json({
     response: {
       operation: "median",
-      value,
+      value: value,
     },
   });
 });
