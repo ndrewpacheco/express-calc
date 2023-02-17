@@ -18,7 +18,7 @@ app.get("/mean", function (req, res) {
 });
 
 app.get("/median", function (req, res) {
-  let nums = req.query["nums"]
+  const nums = req.query["nums"]
     .split(",")
     .sort((a, b) => parseInt(a) + parseInt(b));
   const value = parseInt(nums[Math.round((nums.length - 1) / 2)]);
@@ -26,6 +26,24 @@ app.get("/median", function (req, res) {
   return res.json({
     response: {
       operation: "median",
+      value,
+    },
+  });
+});
+
+app.get("/mode", function (req, res) {
+  const nums = req.query["nums"].split(",");
+  const counterObj = {};
+  nums.forEach((num) => {
+    counterObj[num] ? (counterObj[num] += 1) : (counterObj[num] = 1);
+  });
+
+  const max = Math.max(...Object.values(counterObj));
+  const value = Object.keys(counterObj).find((key) => counterObj[key] === max);
+
+  return res.json({
+    response: {
+      operation: "mode",
       value,
     },
   });
